@@ -1,6 +1,6 @@
-#Jupyter-notebook 배포
+# Jupyter-notebook 배포
 
-###▶BuildPack 다운로드
+### ▶BuildPack 다운로드
 
 https://github.com/cloudfoundry/python-buildpack
 ![image1](https://user-images.githubusercontent.com/67575226/97148184-09237880-17ae-11eb-9df1-2258e978bc98.png)
@@ -28,14 +28,14 @@ binary_buildpack           12         true      false    binary_buildpack-cflinu
 jupyter_python             13         true      false    python-buildpack.zip
 ```
 
-###▶배포할 Jupyter-notebook 다운로드
+### ▶배포할 Jupyter-notebook 다운로드
 
 ```
 $ git clone https://github.com/AbhishekGhosh/Bluemix-Jupyter-Notebook.git
 
 ```
 
-###▶배포파일 수정
+### ▶배포파일 수정
 
 ```
 $ cd Bluemix-Jupyter-Notebook/
@@ -57,13 +57,13 @@ applications:
 - name: ipython
   memory: 4G
   instances: 1
-  host: ipython 
+  host: ipython
   domain: sys-cafe.com
   path: .
   buildpack: python_buildpack_jypyter
 ```
 
-###▶패키지 다운로드
+### ▶패키지 다운로드
 
 ```
 추가패키지를 Offline배포하기 위하여 vendor 폴더에 다운 받는다.
@@ -72,7 +72,7 @@ $ mkdir -p vendor
 $ pip download -r requirements.txt --no-binary=:none: -d vendor
 ```
 
-###▶배포
+### ▶배포
 
 ```
 # disk 10G, timeout 15로 하여 배포해야 오류발생하지 않음.
@@ -81,5 +81,5 @@ $ cf push --no-start -k 10g t 15
 $ cf start ipython
 ```
 
-###▶접속
+### ▶접속
 ![image2](https://user-images.githubusercontent.com/67575226/97148230-222c2980-17ae-11eb-92a2-29464b9e642d.png)
